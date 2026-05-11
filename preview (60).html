@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Glossário Cyber 2026 — Quadro Negro Be Safe</title>
+<style>
+:root {
+  --board:#122119;
+  --board2:#0b1712;
+  --chalk:#f3f0dd;
+  --chalk-dim:#d8d0ad;
+  --yellow:#ffe29b;
+  --pink:#ffb7cb;
+  --blue:#b8e7ff;
+  --green:#c4ffb4;
+  --wood:#9a5b2e;
+  --wood2:#5c331d;
+  --wood-dark:#2b160b;
+  --wood-mid:#7a421f;
+  --wood-light:#d59a58;
+  --shadow:rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#25170e;color:var(--chalk);font-family:"Trebuchet MS",Verdana,sans-serif;}
+body{cursor:none;}
+a,button,input,select,.card{cursor:none;}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.18;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.15), transparent 24%),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 100% 100%, 38px 38px, 38px 38px;
+}
+.wrapper{max-width:1480px;margin:0 auto;padding:26px;}
+.board{
+  min-height:calc(100vh - 52px);
+  border:0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,.055), transparent 22%),
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,.04), transparent 18%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.018), rgba(255,255,255,.018) 1px, transparent 1px, transparent 5px),
+    linear-gradient(135deg,var(--board),var(--board2));
+  box-shadow:0 28px 90px rgba(0,0,0,.62), inset 0 0 55px rgba(0,0,0,.6);
+  border-radius:10px;
+  padding:52px;
+  position:relative;
+  overflow:hidden;
+}
+.board:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  border-radius:10px;
+  padding:30px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.20), transparent 13%, rgba(0,0,0,.22) 34%, transparent 58%, rgba(255,255,255,.10) 79%, rgba(0,0,0,.28)),
+    repeating-linear-gradient(92deg,
+      var(--wood-dark) 0 9px,
+      var(--wood-mid) 9px 18px,
+      #a6622e 18px 28px,
+      var(--wood-light) 28px 32px,
+      #6a3418 32px 45px),
+    radial-gradient(ellipse at 18% 28%, rgba(46,20,8,.72) 0 8px, rgba(120,63,29,.55) 9px 15px, transparent 16px),
+    radial-gradient(ellipse at 73% 72%, rgba(40,17,7,.64) 0 7px, rgba(165,92,40,.44) 8px 16px, transparent 17px);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,225,160,.20),
+    inset 0 0 0 10px rgba(35,16,6,.30),
+    inset 0 0 34px rgba(0,0,0,.62),
+    0 0 0 1px rgba(0,0,0,.55);
+}
+.board .wood-screw{
+  position:absolute;
+  width:18px;height:18px;border-radius:50%;
+  z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 35% 30%, #efe0bd 0 8%, #9b6a38 18%, #3a1c0b 72%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.35), inset 0 -2px 3px rgba(0,0,0,.65), 0 2px 7px rgba(0,0,0,.55);
+}
+.board .wood-screw:after{content:"";position:absolute;left:4px;right:4px;top:8px;height:2px;background:rgba(20,9,3,.65);transform:rotate(-18deg);border-radius:3px}
+.board .wood-screw.tl{left:16px;top:16px}.board .wood-screw.tr{right:16px;top:16px}.board .wood-screw.bl{left:16px;bottom:16px}.board .wood-screw.br{right:16px;bottom:16px}
+.board > *:not(.wood-screw){position:relative;z-index:1}
+.board:after{
+  content:"";position:absolute;left:4%;right:4%;bottom:10px;height:16px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  filter:blur(10px);opacity:.55;
+}
+.header{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:start;position:relative;z-index:1}
+h1{
+  margin:0 0 10px;font-size:clamp(2.2rem,5vw,5.9rem);line-height:.92;
+  color:var(--chalk);letter-spacing:1px;text-shadow:2px 2px 0 rgba(255,255,255,.08), 0 0 18px rgba(255,255,255,.08);
+  font-family:"Comic Sans MS","Trebuchet MS",cursive;
+}
+.subtitle{font-size:clamp(1rem,2vw,1.42rem);color:var(--chalk-dim);max-width:980px;line-height:1.45}
+.badgebox{border:2px dashed rgba(255,255,255,.4);border-radius:18px;padding:18px;background:rgba(255,255,255,.035);transform:rotate(1deg)}
+.badgebox strong{color:var(--yellow);font-size:1.1rem}
+.badgebox p{margin:8px 0 0;color:var(--chalk-dim);line-height:1.4}
+.controls{
+  margin:26px 0 22px;display:grid;grid-template-columns:1fr auto;gap:14px;position:sticky;top:0;z-index:5;
+  padding:12px;background:rgba(8,18,13,.88);backdrop-filter: blur(8px);border:1px solid rgba(255,255,255,.13);border-radius:18px;
+}
+input,select,button{
+  font:inherit;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:var(--chalk);
+  border-radius:14px;padding:14px 15px;outline:none;
+}
+input::placeholder{color:rgba(243,240,221,.62)}
+button{cursor:none;background:rgba(255,255,255,.09);transition:.18s transform,.18s background,.18s box-shadow}
+button:hover{transform:translateY(-2px);background:rgba(255,255,255,.14);box-shadow:0 0 18px rgba(243,240,221,.16)}
+button:active{transform:translateY(1px) scale(.98)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
+.stat{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.045);color:var(--chalk-dim)}
+.layerNav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 24px}
+.layerBtn{padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);font-size:.92rem;color:var(--chalk-dim)}
+.layerBtn.active{color:#102016;background:var(--chalk);border-color:var(--chalk)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative;z-index:1}
+.card{
+  border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:17px 17px 15px;min-height:174px;
+  background:rgba(255,255,255,.035);box-shadow:inset 0 0 22px rgba(0,0,0,.12);
+  position:relative;overflow:hidden;transition:.18s transform,.18s border-color,.18s background;
+}
+.card:hover{transform:translateY(-3px) rotate(-.2deg);border-color:rgba(255,255,255,.48);background:rgba(255,255,255,.06)}
+.card:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle,rgba(255,255,255,.10),transparent 28%);opacity:.1;transform:rotate(12deg)}
+.layer{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:10px}
+.name{font-size:1.42rem;color:var(--yellow);font-weight:800;font-family:"Comic Sans MS","Trebuchet MS",cursive;line-height:1.05}
+.desc{margin-top:11px;color:var(--chalk);line-height:1.42;font-size:1rem}
+.chalkLine{height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);margin:28px 0}
+.notice{border-left:5px solid var(--pink);padding:14px 16px;background:rgba(255,255,255,.04);border-radius:12px;margin:22px 0;color:var(--chalk-dim);line-height:1.5}
+.footer{margin-top:34px;color:rgba(243,240,221,.76);font-size:.95rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.24);padding-top:16px}
+.eraser{position:absolute;right:34px;bottom:28px;width:105px;height:32px;border-radius:8px;background:linear-gradient(#e5d9c6,#9b8f82);box-shadow:0 8px 16px rgba(0,0,0,.35);transform:rotate(-4deg);opacity:.85}
+.chalk{position:absolute;right:160px;bottom:31px;width:88px;height:9px;border-radius:99px;background:#eee9d7;box-shadow:0 0 7px rgba(255,255,255,.3);transform:rotate(2deg)}
+.empty{display:none;text-align:center;padding:48px;border:2px dashed rgba(255,255,255,.25);border-radius:20px;color:var(--chalk-dim);font-size:1.2rem}
+
+.soundBtn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.click-pop{position:fixed;left:0;top:0;width:12px;height:12px;border:2px solid rgba(243,240,221,.9);border-radius:50%;pointer-events:none;z-index:9998;animation:popChalk .55s ease-out forwards;filter:drop-shadow(0 0 7px rgba(255,255,255,.35))}
+.chalk-dust{position:fixed;left:0;top:0;width:5px;height:5px;background:rgba(243,240,221,.85);border-radius:50%;pointer-events:none;z-index:9998;animation:dustFall .75s ease-out forwards;box-shadow:0 0 8px rgba(255,255,255,.25)}
+@keyframes popChalk{0%{transform:translate(-50%,-50%) scale(.35);opacity:.95}100%{transform:translate(-50%,-50%) scale(4.8);opacity:0}}
+@keyframes dustFall{0%{transform:translate(-50%,-50%) scale(1);opacity:.9}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.2);opacity:0}}
+.cursorChalk{position:fixed;left:0;top:0;width:74px;height:22px;pointer-events:none;z-index:10000;transform:translate(10px,12px) rotate(-24deg);filter:drop-shadow(0 6px 7px rgba(0,0,0,.35));will-change:transform, left, top}
+.cursorChalk:before{content:"";position:absolute;left:0;top:6px;width:62px;height:11px;border-radius:99px;background:linear-gradient(90deg,#fffdf0,#e9e2c8 55%,#cfc5a4);box-shadow:inset -8px 0 8px rgba(0,0,0,.12),0 0 8px rgba(255,255,255,.22)}
+.cursorChalk:after{content:"";position:absolute;left:56px;top:5px;width:14px;height:13px;border-radius:50%;background:#fffdf0;box-shadow:0 0 10px rgba(255,255,255,.28)}
+.cursorChalk.clicking{animation:chalkTap .18s ease-out}
+@keyframes chalkTap{50%{transform:translate(7px,10px) rotate(-28deg) scale(.92)}}
+@media(pointer:coarse){body,a,button,input,select,.card{cursor:auto}.cursorChalk{display:none}}
+
+@media(max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .wrapper{padding:10px}.board{padding:30px 18px 26px}.grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr;position:relative}h1{font-size:2.55rem}.card{min-height:auto}
+}
+@media print{
+  body{background:white}.wrapper{padding:0}.board{border:0;box-shadow:none;background:#fff;color:#111}.controls,.layerNav,.eraser,.chalk{display:none}.card{break-inside:avoid;color:#111;border-color:#444;background:white}.desc,.subtitle,.notice,.footer,.stat{color:#111}.name{color:#000}.layer{color:#333}
+}
+</style>
+</head>
+<body>
+<div class="cursorChalk" id="cursorChalk" aria-hidden="true"></div>
+<div class="wrapper">
+  <main class="board">
+    <span class="wood-screw tl"></span><span class="wood-screw tr"></span><span class="wood-screw bl"></span><span class="wood-screw br"></span>
+    <section class="header">
+      <div>
+        <h1>Glossário Cyber 2026</h1>
+        <div class="subtitle">Um quadro negro de defesa em camadas: governança, identidade, endpoint, rede, cloud, dados, SOC, OT, IA, cripto, continuidade e validação. Técnica suficiente para reunião séria… e humor ácido suficiente para sobreviver a ela.</div>
+      </div>
+      <aside class="badgebox">
+        <strong>Nota honesta no quadro:</strong>
+        <p>“Todas as techs existentes” literalmente não cabe nem no orçamento, nem no HTML, nem na sanidade. Aqui está uma cobertura ampla das categorias e tecnologias defensivas relevantes em 2026, organizada por camadas de defesa.</p>
+      </aside>
+    </section>
+
+    <div class="notice">
+      Use a busca para filtrar por sigla, tecnologia ou camada. Clique em uma camada para focar. O conteúdo foi pensado para ensino, pré-vendas, SOC, TR e explicação executiva sem parecer bula de firewall.
+    </div>
+
+    <section class="controls">
+      <input id="search" type="search" placeholder="Buscar: EDR, CNAPP, IAM, SIEM, DLP, Zero Trust, Kubernetes..." />
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button id="reset">Limpar quadro</button><button id="mute" class="soundBtn" aria-pressed="false">🔊 Som ligado</button></div>
+    </section>
+
+    <div class="stats" id="stats"></div>
+    <nav class="layerNav" id="layerNav"></nav>
+    <div class="chalkLine"></div>
+    <section class="grid" id="grid"></section>
+    <div class="empty" id="empty">Nada encontrado. Ou a tech não existe, ou o fornecedor acabou de inventar o acrônimo ontem.</div>
+
+    <div class="footer">
+      <span>Be Safe • Mariana BS — Cybersecurity Engineer</span>
+      <span>Atualizado para visão defensiva moderna de 2026</span>
+    </div>
+    <div class="chalk"></div><div class="eraser"></div>
+  </main>
+</div>
+<script>
+const DATA = [{"layer": "Governança, Risco e Estratégia", "name": "GRC", "desc": "Governança, risco e conformidade. A planilha que virou plataforma porque alguém percebeu que e-mail com anexo não era gestão."}, {"layer": "Governança, Risco e Estratégia", "name": "Cyber Risk Quantification", "desc": "Quantifica risco em dinheiro. Para finalmente explicar ao financeiro que ransomware não é ‘possibilidade remota’, é boleto com capuz."}, {"layer": "Governança, Risco e Estratégia", "name": "ERM Integration", "desc": "Integra risco cibernético ao risco corporativo. Porque cyber isolado vira teatro caro com dashboard bonito."}, {"layer": "Governança, Risco e Estratégia", "name": "NIST CSF 2.0", "desc": "Framework com Govern, Identify, Protect, Detect, Respond e Recover. O mínimo civilizatório para não chamar sorte de estratégia."}, {"layer": "Governança, Risco e Estratégia", "name": "ISO/IEC 27001", "desc": "Sistema de gestão de segurança da informação. Não é certificado mágico; é disciplina com auditor olhando sua alma."}, {"layer": "Governança, Risco e Estratégia", "name": "ISO/IEC 27002", "desc": "Catálogo de controles de segurança. A lista de tarefas que todo mundo ama citar e pouca gente ama implementar."}, {"layer": "Governança, Risco e Estratégia", "name": "COBIT", "desc": "Governança de TI orientada a objetivos. Útil para lembrar que TI não é um puxadinho místico do negócio."}, {"layer": "Governança, Risco e Estratégia", "name": "CIS Controls", "desc": "Controles priorizados e práticos. Uma forma elegante de dizer: inventário primeiro, PowerPoint depois."}, {"layer": "Governança, Risco e Estratégia", "name": "Privacy Governance", "desc": "Governança de privacidade. Serve para evitar que ‘coletamos só o necessário’ vire ficção científica."}, {"layer": "Governança, Risco e Estratégia", "name": "LGPD / GDPR Operations", "desc": "Operação de proteção de dados. Onde consentimento, retenção e base legal param de ser palavras decorativas."}, {"layer": "Governança, Risco e Estratégia", "name": "Third-Party Risk Management", "desc": "Gestão de risco de terceiros. Porque o atacante ama fornecedor pequeno com VPN grande."}, {"layer": "Governança, Risco e Estratégia", "name": "Cyber Insurance", "desc": "Seguro cibernético. Não substitui controle; só monetiza o arrependimento com formulário longo."}, {"layer": "Governança, Risco e Estratégia", "name": "Security Metrics & KPIs", "desc": "Métricas de segurança. Bom KPI mede risco; KPI ruim mede quantos PDFs o SOC sofreu para gerar."}, {"layer": "Governança, Risco e Estratégia", "name": "Board Cyber Reporting", "desc": "Reporte executivo. Traduz CVE, EDR e IAM para ‘quanto custa, quanto dói e quando resolve’."}, {"layer": "Governança, Risco e Estratégia", "name": "Policy Management", "desc": "Gestão de políticas. Documento que ninguém lê até o dia em que vira evidência."}, {"layer": "Governança, Risco e Estratégia", "name": "Compliance Automation", "desc": "Automação de conformidade. Faz coleta contínua de evidência para não transformar auditoria em arqueologia."}, {"layer": "Governança, Risco e Estratégia", "name": "Security Awareness", "desc": "Conscientização. Treinamento para explicar que ‘senha123!’ não é expressão de liberdade criativa."}, {"layer": "Governança, Risco e Estratégia", "name": "Cyber Resilience", "desc": "Resiliência cibernética. Continuar operando quando a realidade decide fazer pentest sem contrato."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Asset Inventory", "desc": "Inventário de ativos. A pergunta básica ‘o que temos?’ que derruba impérios inteiros."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "CAASM", "desc": "Cyber Asset Attack Surface Management. Consolida ativos e contexto; CMDB com menos fantasia e mais vergonha na cara."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "EASM", "desc": "External Attack Surface Management. Enxerga o que está exposto na internet antes do estagiário do crime."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "DRPS", "desc": "Digital Risk Protection Service. Monitora vazamentos, domínios falsos e perfis suspeitos. Fofo até achar credencial no Telegram."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Attack Surface Management", "desc": "Gestão da superfície de ataque. Reduz as portas abertas da empresa e da esperança."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Exposure Management", "desc": "Gestão contínua de exposição. Sai do ‘tem CVE’ para ‘isso realmente vira desastre aqui?’."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Breach and Attack Simulation", "desc": "Simulação contínua de ataque. Aperta botões para provar que o controle existe ou que só existia no contrato."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Attack Path Management", "desc": "Gestão de caminhos de ataque. Mostra como uma falha pequena vira domínio comprometido, porque o caos sabe fazer integração."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Cyber Asset Intelligence", "desc": "Inteligência de ativos. Contexto sobre dono, criticidade, software, exposição e risco. Inventário que tomou café."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Configuration Management", "desc": "Gestão de configuração. Evita que ‘temporário’ vire arquitetura oficial por sete anos."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "CMDB", "desc": "Banco de configuração. Quando atualizado, é lindo. Quando não, é literatura histórica."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "SBOM", "desc": "Software Bill of Materials. Lista ingredientes do software para descobrir que sua aplicação também tem glúten, Log4j e trauma."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "HBOM", "desc": "Hardware Bill of Materials. Inventário de componentes físicos. Porque chip obscuro também sabe estragar o dia."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Internet Exposure Scanning", "desc": "Varredura de exposição externa. Descobre painel admin público antes do Shodan virar RH do atacante."}, {"layer": "Inventário, Exposição e Superfície de Ataque", "name": "Shadow IT Discovery", "desc": "Descoberta de TI sombra. A caça ao SaaS comprado no cartão corporativo e abençoado por ninguém."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "IAM", "desc": "Identity and Access Management. Controla quem é quem e quem pode o quê. Parece simples até existir planilha de acesso."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "IGA", "desc": "Identity Governance and Administration. Governança do ciclo de vida de acesso. Remove privilégio órfão antes que ele vire herança maldita."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "PAM", "desc": "Privileged Access Management. Cofre e controle de contas privilegiadas. Porque admin sem controle é root com complexo de deus."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "PIM", "desc": "Privileged Identity Management. Elevação temporária e just-in-time. Privilégio permanente é convite com tapete vermelho."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "MFA", "desc": "Multi-Factor Authentication. Segunda prova de identidade. Não resolve burrice, mas encarece o golpe."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "Passwordless", "desc": "Autenticação sem senha. Menos ‘esqueci minha senha’, mais criptografia e chaves resistentes a phishing."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "FIDO2 / WebAuthn", "desc": "Autenticação forte baseada em chave pública. O terror elegante do phishing preguiçoso."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "SSO", "desc": "Single Sign-On. Um login para vários sistemas. Confortável, poderoso e perigoso se tratado como chave do reino sem guarda."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "SAML", "desc": "Protocolo federado clássico. XML fazendo cosplay de segurança corporativa."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "OAuth 2.0", "desc": "Autorização delegada. Ótimo quando bem feito; uma festa de scopes quando mal feito."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "OpenID Connect", "desc": "Camada de identidade sobre OAuth 2.0. Finalmente alguém perguntou ‘mas quem é o usuário?’"}, {"layer": "Identidade, Acesso e Zero Trust", "name": "Conditional Access", "desc": "Acesso condicional. Decide com base em risco, dispositivo, localização e contexto. A catraca aprendeu a julgar."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "ZTNA", "desc": "Zero Trust Network Access. Acesso por aplicação, não por rede inteira. Adeus VPN buffet livre."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "Zero Trust Architecture", "desc": "Arquitetura Zero Trust. Nunca confie, sempre verifique. Chato, necessário e decepcionante para invasor folgado."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "CIEM", "desc": "Cloud Infrastructure Entitlement Management. Caça permissões excessivas em nuvem. IAM cloud é selva com JSON."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "ITDR", "desc": "Identity Threat Detection and Response. Detecta abuso de identidade. Porque hoje o atacante não invade; ele faz login."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "UEBA", "desc": "User and Entity Behavior Analytics. Analisa comportamento anômalo. Quando o usuário ‘normal’ baixa 80 GB às 3h, o sistema estranha."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "Access Review", "desc": "Revisão periódica de acessos. Ritual onde gestores descobrem usuários que saíram em 2021."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "JIT Access", "desc": "Acesso just-in-time. Privilégio só no momento necessário. Menos poder eterno, menos tragédia anunciada."}, {"layer": "Identidade, Acesso e Zero Trust", "name": "Device Trust", "desc": "Confiança do dispositivo. Só deixa entrar se o endpoint não parecer uma geladeira com Windows XP."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Antivirus / NGAV", "desc": "Antivírus de nova geração. Evoluiu do ‘assinatura ou nada’ para comportamento, ML e menos fé em hash."}, {"layer": "Endpoint, Servidores e Workloads", "name": "EDR", "desc": "Endpoint Detection and Response. Telemetria e resposta no endpoint. O detetive que mora no notebook do usuário que clica em tudo."}, {"layer": "Endpoint, Servidores e Workloads", "name": "XDR", "desc": "Extended Detection and Response. Junta endpoint, identidade, e-mail, cloud e rede. SIEM gourmet? Às vezes. Útil? Quando integra de verdade."}, {"layer": "Endpoint, Servidores e Workloads", "name": "MDR", "desc": "Managed Detection and Response. Operação gerenciada de detecção e resposta. Para quem aceita que alerta não se responde sozinho."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Host Firewall", "desc": "Firewall local. Porque confiar só no perímetro é coisa de 2008 com nostalgia ruim."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Application Control", "desc": "Controle de aplicação. Decide o que pode rodar. O oposto do ‘baixei um executável no grupo da firma’."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Device Control", "desc": "Controle de USB e periféricos. Bloqueia o pendrive chamado ‘curriculo.exe’."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Full Disk Encryption", "desc": "Criptografia de disco. Perdeu notebook? Pelo menos não perdeu a dignidade junto."}, {"layer": "Endpoint, Servidores e Workloads", "name": "MDM", "desc": "Mobile Device Management. Gestão de dispositivos móveis. O adulto responsável pelo celular corporativo cheio de app duvidoso."}, {"layer": "Endpoint, Servidores e Workloads", "name": "UEM", "desc": "Unified Endpoint Management. Gestão unificada de endpoints. Porque notebook, celular e tablet decidiram multiplicar a dor."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Patch Management", "desc": "Gestão de patches. Atualizar antes que CVE vire manchete e post motivacional no LinkedIn."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Vulnerability Remediation", "desc": "Remediação de vulnerabilidades. Fechar a falha, não só colorir o dashboard de vermelho."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Hardening", "desc": "Endurecimento de sistemas. Tirar o excesso, limitar o privilégio e decepcionar o atacante."}, {"layer": "Endpoint, Servidores e Workloads", "name": "EDR Isolation", "desc": "Isolamento de endpoint. Coloca a máquina de castigo antes que ela socialize malware."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Memory Protection", "desc": "Proteção de memória. Mitiga exploração em runtime. Porque malware também gosta de morar sem pagar aluguel."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Application Whitelisting", "desc": "Lista permitida de apps. Só roda o autorizado. A festa acabou para o instalador misterioso."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Runtime Protection", "desc": "Proteção em execução. Observa processo vivo, não só arquivo parado fazendo pose."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Server Workload Protection", "desc": "Proteção de servidores e workloads. Endpoint de datacenter também sangra, só cobra mais caro."}, {"layer": "Endpoint, Servidores e Workloads", "name": "Container Runtime Security", "desc": "Segurança em runtime de containers. Porque container vulnerável ainda é vulnerável, só usa camiseta DevOps."}, {"layer": "Rede, Perímetro e Tráfego", "name": "Firewall", "desc": "Controla tráfego por regras. Fundamental, mas não é amuleto. Deixar any-any é escrever poesia para o invasor."}, {"layer": "Rede, Perímetro e Tráfego", "name": "NGFW", "desc": "Next-Generation Firewall. Firewall com aplicação, usuário, IPS e inspeção. O porteiro aprendeu a ler crachá e fofoca."}, {"layer": "Rede, Perímetro e Tráfego", "name": "WAF", "desc": "Web Application Firewall. Protege aplicação web contra ataques comuns. Não corrige código ruim, só segura a vergonha na porta."}, {"layer": "Rede, Perímetro e Tráfego", "name": "WAAP", "desc": "Web Application and API Protection. Junta WAF, proteção de API, bot e DDoS. Porque hoje a bagunça fala JSON."}, {"layer": "Rede, Perímetro e Tráfego", "name": "IPS", "desc": "Intrusion Prevention System. Bloqueia exploração conhecida ou suspeita. Se mal ajustado, bloqueia também a paciência."}, {"layer": "Rede, Perímetro e Tráfego", "name": "IDS", "desc": "Intrusion Detection System. Detecta, alerta e deixa alguém sofrer a ação manual."}, {"layer": "Rede, Perímetro e Tráfego", "name": "NDR", "desc": "Network Detection and Response. Detecta comportamento malicioso na rede. Ótimo para ver lateral movement fazendo turismo interno."}, {"layer": "Rede, Perímetro e Tráfego", "name": "NTA", "desc": "Network Traffic Analysis. Análise de tráfego. Quando payload some por TLS, metadado ainda fofoca."}, {"layer": "Rede, Perímetro e Tráfego", "name": "DPI", "desc": "Deep Packet Inspection. Inspeção profunda. Útil, invasiva e sempre convidada para debates sobre privacidade."}, {"layer": "Rede, Perímetro e Tráfego", "name": "DDoS Protection", "desc": "Proteção contra negação de serviço. Segura tsunami de tráfego para o site não virar obra de arte offline."}, {"layer": "Rede, Perímetro e Tráfego", "name": "CDN Security", "desc": "Segurança via CDN. Aproxima conteúdo, absorve ataque e ainda faz performance parecer competência."}, {"layer": "Rede, Perímetro e Tráfego", "name": "Secure DNS", "desc": "DNS seguro com filtragem. Bloqueia domínio malicioso antes do clique virar ocorrência."}, {"layer": "Rede, Perímetro e Tráfego", "name": "DNS Firewall", "desc": "Firewall de DNS. O porteiro do nome de domínio; simples, subestimado e muito útil."}, {"layer": "Rede, Perímetro e Tráfego", "name": "NAC", "desc": "Network Access Control. Controla quem entra na rede. A catraca que pergunta ‘você é mesmo um notebook corporativo?’"}, {"layer": "Rede, Perímetro e Tráfego", "name": "Microsegmentation", "desc": "Microsegmentação. Divide a rede em zonas finas. Lateral movement chora em posição fetal."}, {"layer": "Rede, Perímetro e Tráfego", "name": "SD-WAN Security", "desc": "Segurança em SD-WAN. Roteamento inteligente com política. Porque branch também merece proteção, não só MPLS nostálgico."}, {"layer": "Rede, Perímetro e Tráfego", "name": "VPN", "desc": "Rede privada virtual. Boa quando bem governada. Ruim quando vira túnel mágico para tudo."}, {"layer": "Rede, Perímetro e Tráfego", "name": "TLS Inspection", "desc": "Inspeção TLS. Vê tráfego criptografado sob controle corporativo. Útil, sensível e perigosa se feita sem critério."}, {"layer": "Rede, Perímetro e Tráfego", "name": "Proxy", "desc": "Intermediário de acesso web. O fiscal de navegação que sabe que ‘pesquisa de trabalho’ era site estranho."}, {"layer": "Rede, Perímetro e Tráfego", "name": "SWG", "desc": "Secure Web Gateway. Protege navegação web. Proxy com diploma e políticas mais modernas."}, {"layer": "Rede, Perímetro e Tráfego", "name": "SSE", "desc": "Security Service Edge. SWG, CASB, ZTNA e DLP na borda de serviço. Perímetro morreu, virou assinatura."}, {"layer": "Rede, Perímetro e Tráfego", "name": "SASE", "desc": "Secure Access Service Edge. Rede e segurança como serviço. Bonito no slide; difícil quando legado dá bom-dia."}, {"layer": "Rede, Perímetro e Tráfego", "name": "Deception Network", "desc": "Iscas e honeypots internos. Dá brinquedo falso para o atacante se denunciar sozinho."}, {"layer": "Rede, Perímetro e Tráfego", "name": "Packet Capture", "desc": "Captura de pacotes. A câmera de segurança da rede, só que com mais hexadecimal e menos paciência."}, {"layer": "Cloud, Containers e DevSecOps", "name": "CSPM", "desc": "Cloud Security Posture Management. Detecta misconfig em nuvem. Porque bucket público não é estratégia de marketing."}, {"layer": "Cloud, Containers e DevSecOps", "name": "CWPP", "desc": "Cloud Workload Protection Platform. Protege workloads cloud. VM em nuvem continua sendo servidor, só com cobrança por hora."}, {"layer": "Cloud, Containers e DevSecOps", "name": "CNAPP", "desc": "Cloud-Native Application Protection Platform. Une CSPM, CWPP, CIEM, IaC, containers e contexto. A nuvem ganhou guarda-chuva porque chovia alerta."}, {"layer": "Cloud, Containers e DevSecOps", "name": "KSPM", "desc": "Kubernetes Security Posture Management. Postura de Kubernetes. Para clusters que achavam que YAML era escudo."}, {"layer": "Cloud, Containers e DevSecOps", "name": "Kubernetes Runtime Security", "desc": "Detecção e proteção em runtime do cluster. Porque pod também faz coisa feia depois do deploy."}, {"layer": "Cloud, Containers e DevSecOps", "name": "Container Image Scanning", "desc": "Scan de imagem de container. Descobre CVE antes da imagem vulnerável ganhar produção e crachá."}, {"layer": "Cloud, Containers e DevSecOps", "name": "IaC Security", "desc": "Segurança de Infrastructure as Code. Pega erro no Terraform antes que ele vire incidente com custo mensal."}, {"layer": "Cloud, Containers e DevSecOps", "name": "CI/CD Security", "desc": "Segurança de pipeline. Protege build, secrets, artefatos e permissões. Supply chain começa no commit inocente."}, {"layer": "Cloud, Containers e DevSecOps", "name": "SAST", "desc": "Static Application Security Testing. Analisa código sem executar. O corretor ortográfico da tragédia lógica."}, {"layer": "Cloud, Containers e DevSecOps", "name": "DAST", "desc": "Dynamic Application Security Testing. Testa app em execução. O pentest automatizado que não entende contexto, mas incomoda bem."}, {"layer": "Cloud, Containers e DevSecOps", "name": "IAST", "desc": "Interactive Application Security Testing. Analisa por dentro durante execução. Stethoscópio para app com tosse de SQL injection."}, {"layer": "Cloud, Containers e DevSecOps", "name": "SCA", "desc": "Software Composition Analysis. Analisa dependências. Mostra que seu produto moderno é 87% biblioteca de desconhecidos."}, {"layer": "Cloud, Containers e DevSecOps", "name": "Secrets Scanning", "desc": "Busca segredos em código. Porque chave AWS no Git não é ‘transparência’."}, {"layer": "Cloud, Containers e DevSecOps", "name": "API Security Testing", "desc": "Teste de segurança de API. Verifica auth, schema, abuso e lógica. Swagger bonito não salva API frágil."}, {"layer": "Cloud, Containers e DevSecOps", "name": "ASPM", "desc": "Application Security Posture Management. Consolida achados de AppSec por risco. Menos planilha, mais priorização."}, {"layer": "Cloud, Containers e DevSecOps", "name": "DevSecOps", "desc": "Segurança integrada ao ciclo DevOps. Shift-left sem virar desculpa para jogar tudo no colo do dev."}, {"layer": "Cloud, Containers e DevSecOps", "name": "SBOM Management", "desc": "Gestão de SBOM. Controla componentes e vulnerabilidades ao longo do ciclo. Receita do bolo, inclusive veneno."}, {"layer": "Cloud, Containers e DevSecOps", "name": "Artifact Signing", "desc": "Assinatura de artefatos. Prova origem e integridade. Porque build sem assinatura é ‘confia’."}, {"layer": "Cloud, Containers e DevSecOps", "name": "Policy as Code", "desc": "Políticas como código. Regra auditável, versionada e automatizada. Menos reunião, mais pipeline bloqueando besteira."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "DLP", "desc": "Data Loss Prevention. Evita vazamento de dados. Às vezes bloqueia anexo legítimo, mas também salva carreira."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "DSPM", "desc": "Data Security Posture Management. Descobre, classifica e avalia exposição de dados. O raio-x da bagunça sensível."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Data Classification", "desc": "Classificação de dados. Decide o que é público, interno, confidencial e ‘se vazar, atualiza o LinkedIn’."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Data Discovery", "desc": "Descoberta de dados. Acha PII e segredos onde ninguém lembrava que existiam."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Encryption at Rest", "desc": "Criptografia em repouso. Protege dado parado. O básico que ainda vira diferencial em proposta."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Encryption in Transit", "desc": "Criptografia em trânsito. Protege dado no caminho. Sem isso, a rede vira fofoca com cabo."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Tokenization", "desc": "Tokenização. Substitui dado sensível por token. O dado real fica longe do app curioso."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Data Masking", "desc": "Mascaramento de dados. Mostra o suficiente sem expor tudo. Privacidade para ambiente de teste parar de parecer crime."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "CASB", "desc": "Cloud Access Security Broker. Controla uso de SaaS e cloud. O fiscal do ‘subi arquivo no drive pessoal sem querer’."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "IRM", "desc": "Information Rights Management. Controla uso de documento mesmo depois de enviado. PDF que continua obedecendo."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Database Activity Monitoring", "desc": "Monitoramento de atividade em banco. Observa query suspeita. DBA honesto agradece; atacante interno detesta."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Data Retention", "desc": "Retenção de dados. Guardar só o necessário. Acumular dado sensível é colecionar problema com prazo legal."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Privacy Enhancing Technologies", "desc": "Tecnologias de privacidade. Minimização, anonimização, computação segura. Privacidade com cérebro, não só banner de cookie."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Homomorphic Encryption", "desc": "Criptografia homomórfica. Computar sobre dado cifrado. Lindo, pesado e ainda não é mágica de produção para tudo."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "Key Management", "desc": "Gestão de chaves. Criptografia sem chave bem gerida é cofre com senha no post-it."}, {"layer": "Dados, Privacidade e Proteção de Informação", "name": "HSM", "desc": "Hardware Security Module. Guarda chaves em hardware resistente. Cofre que leva compliance a sério."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "SIEM", "desc": "Security Information and Event Management. Centraliza logs e correlação. O grande aspirador de eventos e ansiedade."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "SOAR", "desc": "Security Orchestration, Automation and Response. Automatiza resposta. Ótimo para playbook maduro; desastre para processo ruim acelerado."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "SOC", "desc": "Security Operations Center. Centro de operação de segurança. Onde alerta nasce, envelhece e vira ticket com terapia."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Threat Intelligence", "desc": "Inteligência de ameaças. Contexto sobre adversários, TTPs e indicadores. IOC sem contexto é fofoca técnica."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "TIP", "desc": "Threat Intelligence Platform. Organiza inteligência. Para não jogar feed pago no SIEM e chamar isso de maturidade."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Threat Hunting", "desc": "Caça a ameaças. Busca ativa baseada em hipótese. Não é passeio no dashboard procurando cor vermelha."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Detection Engineering", "desc": "Engenharia de detecção. Cria, testa e mantém regra. Alerta bom é produto, não improviso de madrugada."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Sigma Rules", "desc": "Formato genérico de regra de detecção. Escreve uma vez, converte para várias plataformas e reza menos."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "YARA", "desc": "Regras para malware e arquivos. O faro de laboratório, só que com sintaxe e raiva."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Suricata Rules", "desc": "Regras IDS/IPS para tráfego. Packet nerds chamam de poesia; o resto chama de manutenção."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "MITRE ATT&CK Mapping", "desc": "Mapeamento para táticas e técnicas. Ajuda a saber o que você detecta e, pior, o que não detecta."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "D3FEND Mapping", "desc": "Mapeamento de contramedidas defensivas. Porque ATT&CK mostra o soco; D3FEND lembra o escudo."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Incident Response", "desc": "Resposta a incidentes. Preparar, detectar, conter, erradicar e recuperar. Sem playbook, vira grupo de WhatsApp em chamas."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "CSIRT", "desc": "Time de resposta a incidentes. Quando o SOC escala porque a coisa parou de ser ‘alertinha’."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "DFIR", "desc": "Digital Forensics and Incident Response. Forense e resposta. Descobre o que houve depois que todo mundo já deu opinião errada."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Case Management", "desc": "Gestão de casos. Organiza evidências, tarefas e decisão. Sem isso, incidente vira novela sem ata."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "UEBA Detection", "desc": "Detecção por comportamento. Ajuda a pegar abuso legítimo de credencial. O atacante logado parece funcionário até começar a ser criativo."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Log Management", "desc": "Gestão de logs. Coleta, retenção e busca. Sem log, incidente vira sessão espírita."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "Telemetry Pipeline", "desc": "Pipeline de telemetria. Normaliza, enriquece e entrega eventos. O encanamento invisível que salva o SOC."}, {"layer": "SOC, Detecção, Resposta e Inteligência", "name": "MSSP", "desc": "Managed Security Service Provider. Provedor gerenciado. Pode ser maturidade terceirizada ou terceirização do caos; depende do contrato."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Email Security Gateway", "desc": "Gateway de segurança de e-mail. Filtra spam, malware e phishing. Ainda existe porque usuário também existe."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Cloud Email Security", "desc": "Proteção de e-mail em nuvem. API, detecção pós-entrega e resposta. Porque ameaça também chega depois do filtro sorrindo."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Anti-Phishing", "desc": "Proteção contra phishing. Tenta impedir que ‘urgente, clique aqui’ vire ransomware com café."}, {"layer": "E-mail, Colaboração e Fraude", "name": "DMARC", "desc": "Autenticação e política de domínio de e-mail. Ajuda a impedir spoofing. Se p=none para sempre, é enfeite DNS."}, {"layer": "E-mail, Colaboração e Fraude", "name": "SPF", "desc": "Define servidores autorizados a enviar por domínio. Bom, mas não faz milagre sozinho."}, {"layer": "E-mail, Colaboração e Fraude", "name": "DKIM", "desc": "Assinatura criptográfica de e-mail. Prova integridade e autoria do domínio. O lacre que o marketing raramente entende."}, {"layer": "E-mail, Colaboração e Fraude", "name": "BEC Protection", "desc": "Proteção contra Business Email Compromise. Detecta golpe financeiro sem anexo, só lábia e boleto."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Sandboxing", "desc": "Executa anexos/links em ambiente controlado. O arquivo suspeito faz teatro antes de entrar na empresa."}, {"layer": "E-mail, Colaboração e Fraude", "name": "URL Rewriting", "desc": "Reescrita de URL. Verifica clique em tempo real. Útil, apesar de deixar link parecendo sopa radioativa."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Collaboration Security", "desc": "Proteção de Teams, Slack, Drive e afins. Porque o phishing descobriu que e-mail não era o único palco."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Brand Protection", "desc": "Proteção de marca. Detecta domínios falsos e impersonação. O golpe usando seu logo com fonte errada."}, {"layer": "E-mail, Colaboração e Fraude", "name": "Fraud Detection", "desc": "Detecção de fraude. Une comportamento, transação e identidade. Segurança onde dinheiro muda de mão e desculpa acaba."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "OT Security", "desc": "Segurança de tecnologia operacional. Protege processo físico. Aqui reboot não é solução, é acidente industrial."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "ICS Security", "desc": "Segurança de sistemas industriais. PLC, SCADA, HMI e dor real. Patch em produção exige mais que coragem."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "SCADA Security", "desc": "Proteção de supervisório industrial. Tela bonita controlando coisa que explode, para ninguém romantizar."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "PLC Security", "desc": "Proteção de controladores lógicos programáveis. O código pequeno que move fábrica grande."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "Industrial IDS", "desc": "Detecção passiva em rede industrial. Observa sem quebrar o processo, porque escanear OT como TI é pedir demissão."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "OT Asset Inventory", "desc": "Inventário OT. Descobre equipamento antigo, protocolo estranho e Windows que viu a Copa de 2002."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "IoT Security", "desc": "Segurança de dispositivos conectados. Câmera, sensor e cafeteira: todos com senha padrão e autoestima."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "Firmware Analysis", "desc": "Análise de firmware. Caça hardcoded secrets e backdoors. O binário também tem passado obscuro."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "Embedded Security", "desc": "Segurança embarcada. Protege hardware restrito. Pouco recurso, muito risco e documentação escrita em hieróglifo."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "Critical Infrastructure Protection", "desc": "Proteção de infraestrutura crítica. Energia, água, saúde e transporte. Aqui o incidente sai do dashboard e entra na vida."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "Safety-Security Integration", "desc": "Integra segurança cibernética e segurança operacional. Porque confidencialidade é importante, mas não explodir também."}, {"layer": "OT, IoT, ICS e Infraestrutura Crítica", "name": "IEC 62443", "desc": "Norma de segurança industrial. A Bíblia OT para separar zona, conduíte e ilusão."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "AI Security", "desc": "Segurança de IA. Protege modelos, dados, prompts e integrações. Porque agora até o chatbot pode vazar segredo com educação."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "AI TRiSM", "desc": "AI Trust, Risk and Security Management. Governança, risco e segurança de IA. O adulto na sala do hype."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "LLM Security", "desc": "Segurança de modelos de linguagem. Prompt injection, data leakage, jailbreak e plugins perigosos. O estagiário estatístico precisa de grade."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Prompt Injection Defense", "desc": "Defesa contra prompt injection. Impede que entrada de usuário vire instrução soberana. ‘Ignore regras anteriores’ não deveria ser chave mestra."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Model Monitoring", "desc": "Monitoramento de modelo. Detecta drift, abuso e resposta estranha. Porque IA também tem dia ruim em produção."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Data Poisoning Defense", "desc": "Defesa contra envenenamento de dados. Protege treino e fine-tuning. Alimentar modelo com lixo dá oráculo tóxico."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Model Supply Chain Security", "desc": "Segurança da cadeia de modelos. Verifica pesos, datasets e dependências. Baixar modelo aleatório é instalar esperança binária."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "AI DLP", "desc": "DLP para uso de IA. Evita colar segredo corporativo no assistente público e chamar isso de produtividade."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "AI Red Teaming", "desc": "Testes ofensivos autorizados em IA. Faz o modelo tropeçar antes que cliente, auditor ou criminoso faça."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "RAG Security", "desc": "Segurança de Retrieval-Augmented Generation. Protege fontes, permissões e contexto. RAG mal feito responde com dado que não devia saber."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Agentic AI Controls", "desc": "Controles para agentes de IA. Limita ferramentas, ações e escopo. Dar shell para agente sem trava é roteiro de terror."}, {"layer": "IA, Automação e Segurança de Modelos", "name": "Synthetic Identity Detection", "desc": "Detecção de identidade sintética. Fraude moderna com IA, documento bonito e alma inexistente."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "PKI", "desc": "Public Key Infrastructure. Certificados, autoridades e confiança. Quando funciona, ninguém vê; quando quebra, todo mundo liga."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "Certificate Management", "desc": "Gestão de certificados. Evita expiração surpresa às 2h. O terror silencioso da indisponibilidade."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "TLS", "desc": "Criptografia de transporte. Protege comunicação. Não transforma aplicação vulnerável em aplicação segura, infelizmente."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "mTLS", "desc": "TLS mútuo. Cliente e servidor se autenticam. Relacionamento saudável: os dois provam quem são."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "PQC", "desc": "Post-Quantum Cryptography. Criptografia resistente a computadores quânticos. Preparação antes do hype virar migração emergencial."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "Crypto Agility", "desc": "Agilidade criptográfica. Trocar algoritmos sem reconstruir o mundo. Porque criptografia também envelhece."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "Secrets Management", "desc": "Gestão de segredos. Cofre para tokens, senhas e chaves. Variável de ambiente não é cofre, é gaveta."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "KMS", "desc": "Key Management Service. Serviço de gestão de chaves. O lugar onde chave deve viver, não no repositório."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "Code Signing", "desc": "Assinatura de código. Garante origem e integridade. Malware assinado existe, mas sem assinatura fica ainda mais bagunçado."}, {"layer": "Criptografia, PKI e Resiliência Pós-Quântica", "name": "Quantum Readiness", "desc": "Preparação pós-quântica. Inventariar criptografia e planejar migração. O futuro cobrando dívida técnica com juros."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Backup", "desc": "Cópia de segurança. Só é backup se restaura. O resto é decoração em storage."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Immutable Backup", "desc": "Backup imutável. Protege contra alteração e ransomware. O ‘não mexe’ que finalmente funciona."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Air Gap", "desc": "Isolamento lógico/físico de backup. O cofre fora do alcance do incêndio digital."}, {"layer": "Continuidade, Backup e Recuperação", "name": "DRP", "desc": "Disaster Recovery Plan. Plano de recuperação de desastre. Documento que precisa funcionar antes do desastre, veja só."}, {"layer": "Continuidade, Backup e Recuperação", "name": "BCP", "desc": "Business Continuity Plan. Continuidade de negócios. Como operar enquanto tudo grita."}, {"layer": "Continuidade, Backup e Recuperação", "name": "RTO", "desc": "Recovery Time Objective. Quanto tempo pode ficar fora. A resposta honesta raramente agrada."}, {"layer": "Continuidade, Backup e Recuperação", "name": "RPO", "desc": "Recovery Point Objective. Quanto dado pode perder. A pergunta que transforma backup semanal em confissão."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Cyber Recovery Vault", "desc": "Cofre de recuperação cibernética. Ambiente isolado para recuperar sistemas críticos. Backup com paranoia saudável."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Tabletop Exercise", "desc": "Exercício de mesa. Simula crise sem derrubar produção. O ensaio geral do caos."}, {"layer": "Continuidade, Backup e Recuperação", "name": "Crisis Communications", "desc": "Comunicação de crise. Evita que o jurídico, o marketing e o SOC escrevam três verdades incompatíveis."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Pentest", "desc": "Teste de intrusão autorizado. Demonstra impacto real. Não é varredura com relatório decorado."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Red Team", "desc": "Operação ofensiva controlada para testar detecção e resposta. O ataque que você paga para não pagar pior depois."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Purple Team", "desc": "Colaboração entre ataque e defesa. Finalmente os dois lados param de medir ego e medem cobertura."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Vulnerability Assessment", "desc": "Avaliação de vulnerabilidades. Identifica falhas. Não confundir com exploração real nem com maturidade."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Exploit Validation", "desc": "Validação de exploração. Prova se a falha é explorável no ambiente. CVSS alto sem contexto é alarme teatral."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Security Control Validation", "desc": "Validação de controles. Testa se firewall, EDR, SIEM e afins fazem o que prometem. Spoiler: contrato não bloqueia malware."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Adversary Emulation", "desc": "Emulação de adversário. Reproduz TTPs reais. Não é ‘rodar ferramenta famosa e tirar print’."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Phishing Simulation", "desc": "Simulação de phishing. Mede comportamento e processo. Se virar pegadinha pública, você treinou humilhação, não segurança."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Bug Bounty", "desc": "Programa de recompensa por bugs. Deixa pesquisadores ajudarem com regras. Sem escopo claro, vira rodeio jurídico."}, {"layer": "Pentest, Validação e Segurança Ofensiva Autorizada", "name": "Attack Simulation Lab", "desc": "Laboratório de simulação. Ambiente controlado para treinar sem incendiar produção."}];
+const grid = document.getElementById('grid');
+const search = document.getElementById('search');
+const reset = document.getElementById('reset');
+const muteBtn = document.getElementById('mute');
+const cursorChalk = document.getElementById('cursorChalk');
+let muted = localStorage.getItem('chalkMuted') === '1';
+let audioCtx = null;
+function updateMute(){ muteBtn.textContent = muted ? '🔇 Som desligado' : '🔊 Som ligado'; muteBtn.setAttribute('aria-pressed', muted ? 'true' : 'false'); }
+function playClick(){
+  if(muted) return;
+  try{
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const noise = audioCtx.createBufferSource();
+    const buffer = audioCtx.createBuffer(1, audioCtx.sampleRate * .035, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for(let i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*(1-i/data.length);
+    noise.buffer = buffer;
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(760, now);
+    osc.frequency.exponentialRampToValueAtTime(220, now + .045);
+    gain.gain.setValueAtTime(.0001, now);
+    gain.gain.exponentialRampToValueAtTime(.13, now + .006);
+    gain.gain.exponentialRampToValueAtTime(.0001, now + .07);
+    osc.connect(gain); noise.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(now); noise.start(now); osc.stop(now + .075); noise.stop(now + .04);
+  }catch(e){}
+}
+function chalkBurst(x,y){
+  const ring=document.createElement('span'); ring.className='click-pop'; ring.style.left=x+'px'; ring.style.top=y+'px'; document.body.appendChild(ring); setTimeout(()=>ring.remove(),650);
+  for(let i=0;i<10;i++){
+    const d=document.createElement('span'); d.className='chalk-dust'; d.style.left=x+'px'; d.style.top=y+'px';
+    d.style.setProperty('--dx', (Math.random()*90-45)+'px'); d.style.setProperty('--dy', (Math.random()*70-25)+'px');
+    document.body.appendChild(d); setTimeout(()=>d.remove(),850);
+  }
+}
+updateMute();
+const layerNav = document.getElementById('layerNav');
+const stats = document.getElementById('stats');
+const empty = document.getElementById('empty');
+let currentLayer = 'Todas';
+
+function layers() { return ['Todas', ...Array.from(new Set(DATA.map(x=>x.layer)))]; }
+
+function renderNav() {
+  layerNav.innerHTML = '';
+  layers().forEach(layer => {
+    const b = document.createElement('button');
+    b.className = 'layerBtn' + (layer === currentLayer ? ' active' : '');
+    b.textContent = layer;
+    b.onclick = () => { currentLayer = layer; render(); };
+    layerNav.appendChild(b);
+  });
+}
+
+function renderStats(items) {
+  const totalLayers = new Set(DATA.map(x=>x.layer)).size;
+  stats.innerHTML = `
+    <span class="stat">${items.length} verbetes exibidos</span>
+    <span class="stat">${DATA.length} verbetes no total</span>
+    <span class="stat">${totalLayers} camadas de defesa</span>
+    <span class="stat">Busca + filtros + modo impressão</span>
+  `;
+}
+
+function card(item) {
+  const el = document.createElement('article');
+  el.className = 'card';
+  el.innerHTML = `<div class="layer">${item.layer}</div><div class="name">${item.name}</div><div class="desc">${item.desc}</div>`;
+  return el;
+}
+
+function render() {
+  const q = search.value.trim().toLowerCase();
+  let items = DATA.filter(item => {
+    const hay = `${item.layer} ${item.name} ${item.desc}`.toLowerCase();
+    return (currentLayer === 'Todas' || item.layer === currentLayer) && (!q || hay.includes(q));
+  });
+  grid.innerHTML = '';
+  items.forEach(i => grid.appendChild(card(i)));
+  empty.style.display = items.length ? 'none' : 'block';
+  renderNav();
+  renderStats(items);
+}
+
+search.addEventListener('input', render);
+reset.addEventListener('click', () => { search.value=''; currentLayer='Todas'; render(); });
+muteBtn.addEventListener('click', () => { muted = !muted; localStorage.setItem('chalkMuted', muted ? '1' : '0'); updateMute(); });
+document.addEventListener('pointermove', e => { if(cursorChalk){ cursorChalk.style.left = e.clientX + 'px'; cursorChalk.style.top = e.clientY + 'px'; } });
+document.addEventListener('pointerdown', e => {
+  playClick(); chalkBurst(e.clientX, e.clientY);
+  if(cursorChalk){ cursorChalk.classList.remove('clicking'); void cursorChalk.offsetWidth; cursorChalk.classList.add('clicking'); }
+});
+render();
+</script>
+</body>
+</html>
